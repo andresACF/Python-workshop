@@ -1,7 +1,7 @@
 class myclass:
     def __init__(self):
         self.myFav = {'Paris': 500, 'NYC': 600}
-  
+
     def get_extraCost(self, dist):
         return self.myFav.get(dist, 0)
 
@@ -20,20 +20,23 @@ class passagner:
             return 0.1
         elif self.num <= 10:
             return 0.2
-        #TODO: add more discount levels if needed
+        # TODO: add more discount levels if needed
         else:
             return 0.0
+
 
 class Plane:
     def __init__(self, dist, num, dur):
         self.myclass = myclass()
-        self.passanger = passanger(num)
+        self.passanger = passagner(num)
         self.total_TIME = total_TIME(dur)
         self.dist = dist
         self.seats = 200
 
     def sum(self):
-        if not self.myclass.validThis(self.dist) or not self.passanger.validNumber() or not self.total_TIME.is_valid_total_TIME():
+        if (not self.myclass.validThis(self.dist) or
+            not self.passanger.validNumber() or
+                not self.total_TIME.is_valid_total_TIME()):
             return -1
 
         numberTotal = self.costBas
@@ -45,12 +48,13 @@ class Plane:
         numberTotal = numberTotal - (numberTotal * discount)
         return max(int(numberTotal), 0)
 
+
 class total_TIME:
     def __init__(self, dur):
         self.dur = dur
 
-    def is_valid_total_TIME(self):
-        return type(dur)==int and self.dur > 0
+    def is_valid_total_TIME(self, dur):
+        return type(dur).isinstance(int and self.dur) > 0
 
     def getFee(self):
         return 200 if self.dur < 7 else 0
@@ -60,6 +64,7 @@ class total_TIME:
 
     def getWeekend(self):
         return 100 if self.dur > 7 else 0
+
 
 class Vacation_:
     costBas = 1000
@@ -72,7 +77,9 @@ class Vacation_:
 
     def sum(self):
         # sum the cost of the vacation package here
-        if not self.myclass.validThis(self.dist) or not self.passagner.validNumber() or not self.total_TIME.is_valid_total_TIME():
+        if (not self.myclass.validThis(self.dist) or
+            not self.passagner.validNumber() or
+                not self.total_TIME.is_valid_total_TIME()):
             return -1
         # sum the total cost
         numberTotal = self.costBas
@@ -84,13 +91,14 @@ class Vacation_:
         numberTotal = numberTotal - (numberTotal * discount)
         return max(int(numberTotal), 0)
 
+
 # this is main function
 def main():
     # this are the inputs
     dist = "Paris"
     num = 5
     dur = 10
-    seats = 400
+    # seats = 400
 
     # this are the outputs
     calculator = Vacation_(dist, num, dur)
@@ -101,6 +109,7 @@ def main():
         print("Invalid input.")
     else:
         print(f"The total cost of the vacation package is: ${cost}")
+
 
 # main event function
 if __name__ == "__main__":
