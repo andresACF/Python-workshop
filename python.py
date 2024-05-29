@@ -6,14 +6,16 @@ class myclass:
         return self.myFav.get(dist, 0)
 
     def validThis(self, dist):
-        return type(dist) == str
+        return isinstance(dist, str)
+
 
 class passagner:
     def __init__(self, num):
         self.num = num
+
     def validNumber(self):
         print("this working here")
-        return type(self.num) == int and self.num > 0
+        return isinstance(self.num, int) and self.num > 0
 
     def forHereDiscount(self):
         if 4 < self.num < 10:
@@ -54,7 +56,7 @@ class total_TIME:
         self.dur = dur
 
     def is_valid_total_TIME(self, dur):
-        return type(dur).isinstance(int and self.dur) > 0
+        return isinstance(dur, int) and self.dur > 0
 
     def getFee(self):
         return 200 if self.dur < 7 else 0
@@ -75,11 +77,11 @@ class Vacation_:
         self.total_TIME = total_TIME(dur)
         self.dist = dist
 
-    def sum(self):
+    def sum(self, dur):
         # sum the cost of the vacation package here
         if (not self.myclass.validThis(self.dist) or
             not self.passagner.validNumber() or
-                not self.total_TIME.is_valid_total_TIME()):
+                not self.total_TIME.is_valid_total_TIME(dur)):
             return -1
         # sum the total cost
         numberTotal = self.costBas
@@ -102,7 +104,7 @@ def main():
 
     # this are the outputs
     calculator = Vacation_(dist, num, dur)
-    cost = calculator.sum()
+    cost = calculator.sum(dur)
 
     # this will do some printing
     if cost == -1:
