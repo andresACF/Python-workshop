@@ -56,8 +56,8 @@ class total_TIME:
     def __init__(self, dur):
         self.dur = dur
 
-    def is_valid_total_TIME(self):
-        return type(dur)==int and self.dur > 0
+    def is_valid_total_TIME(self, dur):
+        return isinstance(dur) == int and self.dur > 0
 
     def getFee(self):
         return 200 if self.dur < 7 else 0
