@@ -36,7 +36,9 @@ class Plane:
         self.seats = 200
 
     def sum(self):
-        if not self.myclass.validThis(self.dist) or not self.passanger.validNumber() or not self.total_TIME.is_valid_total_TIME():
+        if (not self.myclass.validThis(self.dist) or not
+            self.passanger.validNumber() or not
+                self.total_TIME.is_valid_total_TIME()):
             return -1
 
         numberTotal = self.costBas
