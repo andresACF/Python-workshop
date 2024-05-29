@@ -76,7 +76,7 @@ class Vacation_:
         self.dist = dist
 
     def sum(self):
-        #sum the cost of the vacation package here
+        # sum the cost of the vacation package here
         if not self.myclass.validThis(self.dist) or not self.passagner.validNumber() or not self.total_TIME.is_valid_total_TIME():
             return -1
         
