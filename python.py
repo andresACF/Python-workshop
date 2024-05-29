@@ -8,6 +8,7 @@ class myclass:
     def validThis(self, dist):
         return isinstance(dist) == str
 
+
 class passagner:
     def __init__(self, num):
         self.num = num
