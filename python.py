@@ -68,6 +68,7 @@ class total_TIME:
     def getWeekend(self):
         return 100 if self.dur > 7 else 0
 
+
 class Vacation_:
     costBas = 1000
 
