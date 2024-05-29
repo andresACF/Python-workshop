@@ -15,7 +15,7 @@ class passagner:
     
     def validNumber(self):
         print("this working here")
-        return type(self.num) == int and self.num > 0
+        return isinstance(self.num) == int and self.num > 0
 
     def forHereDiscount(self):
         if 4 < self.num < 10:
