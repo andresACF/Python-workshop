@@ -1,17 +1,16 @@
 class myclass:
     def __init__(self):
         self.myFav = {'Paris': 500, 'NYC': 600}
-    
+
     def get_extraCost(self, dist):
         return self.myFav.get(dist, 0)
-    
+
     def validThis(self, dist):
         return type(dist) == str
 
 class passagner:
     def __init__(self, num):
         self.num = num
-    
     def validNumber(self):
         print("this working here")
         return type(self.num) == int and self.num > 0
@@ -44,7 +43,6 @@ class Plane:
 
         discount = self.passanger.forHereDiscount()
         numberTotal = numberTotal - (numberTotal * discount)
-        
         return max(int(numberTotal), 0)
 
 class total_TIME:
