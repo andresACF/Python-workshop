@@ -6,7 +6,7 @@ class myclass:
         return self.myFav.get(dist, 0)
     
     def validThis(self, dist):
-        return type(dist) == str
+        return isinstance(dist) == str
 
 class passagner:
     def __init__(self, num):
