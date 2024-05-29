@@ -26,6 +26,7 @@ class passagner:
         else:
             return 0.0
 
+
 class Plane:
     def __init__(self, dist, num, dur):
         self.myclass = myclass()
