@@ -30,7 +30,7 @@ class passagner:
 class Plane:
     def __init__(self, dist, num, dur):
         self.myclass = myclass()
-        self.passanger = passanger(num)
+        self.passanger = passagner(num)
         self.total_TIME = total_TIME(dur)
         self.dist = dist
         self.seats = 200
