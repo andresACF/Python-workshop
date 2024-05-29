@@ -49,6 +49,7 @@ class Plane:
         
         return max(int(numberTotal), 0)
 
+
 class total_TIME:
     def __init__(self, dur):
         self.dur = dur
