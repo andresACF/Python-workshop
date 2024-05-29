@@ -84,8 +84,7 @@ class Vacation_:
         numberTotal -= self.total_TIME.getTheBestPromoEver()
 
         discount = self.passagner.forHereDiscount()
-        numberTotal = numberTotal - (numberTotal * discount)
-        
+        numberTotal = numberTotal - (numberTotal * discount)        
         return max(int(numberTotal), 0)
 
 #this is main function
